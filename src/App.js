@@ -3,7 +3,7 @@ import ThemeContextProvider from "./contexts/ThemeContext";
 import Navbar from "./components/Navbar";
 import Booklist from "./components/Booklist";
 
-function App() {
+export default function App() {
   return (
     <div className="app">
       <ThemeContextProvider>
@@ -14,5 +14,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
