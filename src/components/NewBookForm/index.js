@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
+import uuid from "uuid/v4";
 import { BookContext } from "../../contexts/BookContext";
+import { addBook } from "../../actions/bookActions";
 import "./styles.scss";
 
 export default function NewBookForm({ book }) {
-  const { addBook } = useContext(BookContext);
+  const { dispatch } = useContext(BookContext);
 
   const [formState, setFormState] = useState({ title: "", author: "" });
   const { title, author } = formState;
@@ -15,7 +17,7 @@ export default function NewBookForm({ book }) {
     const newAuthor = author.trim();
 
     if (newTitle && newAuthor) {
-      addBook(newTitle, newAuthor);
+      dispatch(addBook({ id: uuid(), title: newTitle, author: newAuthor }));
     }
 
     setFormState({

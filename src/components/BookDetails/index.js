@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { BookContext } from "../../contexts/BookContext";
+import { removeBook } from "../../actions/bookActions";
 import "./styles.scss";
 
 export default function BookDetails({ book }) {
-  const { removeBook } = useContext(BookContext);
+  const { dispatch } = useContext(BookContext);
 
-  const handleBookRemove = () => removeBook(book.id);
+  const handleBookRemove = () => dispatch(removeBook(book.id));
 
   return (
     <li className="details" onClick={handleBookRemove}>
