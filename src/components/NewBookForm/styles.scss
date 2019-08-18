@@ -1,0 +1,21 @@
+.new-book-form {
+  padding: 20px;
+
+  input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 6px 0;
+    padding: 10px;
+    background: #3c1f3c;
+    color: #fff;
+    border: 0;
+  }
+  input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+    padding: 6px 20px;
+    background: #eee;
+    border: 0;
+    cursor: pointer;
+  }
+}
